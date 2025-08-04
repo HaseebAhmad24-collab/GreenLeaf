@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GreenLeaf - E-Commerce</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <script type="module" src="frontend.js" defer></script>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header>
+    <div class="logo">🌿 GreenLeaf</div>
+    <nav>
+      <ul>
+        <li><a href="#hero" class="nav-link active">Home</a></li>
+        <li><a href="#products" class="nav-link">Products</a></li>
+        <li><a href="#" id="cart-btn">Cart <span id="cart-count">0</span></a></li>
+        <li><a href="#" id="checkout-nav">Checkout</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Offer Banner -->
+  <div class="offer-banner">
+    <p>🔥 MEGA SALE! Flat 25% OFF on All Plants - Order Today! 🔥</p>
+  </div>
+
+  <!-- Hero Section -->
+  <section id="hero" class="hero">
+    <div class="hero-content">
+      <h1>Bring Nature to Your Home</h1>
+      <p>Fresh & healthy indoor and outdoor plants delivered right at your doorstep.</p>
+      <a href="#products" class="btn-primary">Shop Now</a>
+    </div>
+  </section>
+
+  <!-- Products Section -->
+  <section id="products" class="products">
+    <h2>Our Best-Selling Plants</h2>
+    <div class="product-grid" id="product-list">
+      <!-- Products via Firestore -->
+    </div>
+  </section>
+
+  <!-- Cart Modal -->
+  <div class="cart-modal" id="cart-modal">
+    <div class="cart-content">
+      <h2>Your Cart</h2>
+      <div id="cart-items"></div>
+      <div class="cart-footer">
+        <p>Total: <strong><span id="cart-total">0</span> PKR</strong></p>
+        <button id="checkout-btn" class="btn-primary">Proceed to Checkout</button>
+      </div>
+      <button id="close-cart" class="btn-secondary">Close</button>
+    </div>
+  </div>
+
+  <!-- Checkout Modal -->
+  <div class="checkout-modal" id="checkout-modal">
+    <div class="checkout-content">
+      <h2>Secure Checkout</h2>
+      <form id="checkout-form">
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" placeholder="Enter your name" required>
+        </div>
+        <div class="form-group">
+          <label for="address">Delivery Address</label>
+          <input type="text" id="address" placeholder="Enter full address" required>
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input type="text" id="phone" placeholder="e.g. 0300-1234567" required>
+        </div>
+
+        <h3>Select Payment Method</h3>
+        <div class="payment-option">
+          <input type="radio" name="payment" id="cod" value="Cash on Delivery" required>
+          <label for="cod">💵 Cash on Delivery</label>
+        </div>
+        <div class="payment-option">
+          <input type="radio" name="payment" id="easypaisa" value="EasyPaisa">
+          <label for="easypaisa">📱 EasyPaisa</label>
+        </div>
+        <div class="payment-option">
+          <input type="radio" name="payment" id="jazzcash" value="JazzCash">
+          <label for="jazzcash">📱 JazzCash</label>
+        </div>
+
+        <div class="checkout-buttons">
+          <button type="submit" class="btn-primary">✅ Place Order</button>
+          <button type="button" id="close-checkout" class="btn-secondary">❌ Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 GreenLeaf. All Rights Reserved.</p>
+  </footer>
+
+</body>
+</html>
